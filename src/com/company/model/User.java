@@ -12,6 +12,11 @@ public class User {
     private List<UserProfile> userProfile;
     private List<Payment> paymentU;
     private List<Favorites> favoritesU;
+    private List<Movies> movies;
+    private List<Movies> watchedMovies;
+    private List<TvSeries> tvSeries;
+    private List<TvSeries> watchedSeries;
+    private List<Rating> rate;
 
     public User(String name, String email, String password) {
         this.name = name;
@@ -20,6 +25,31 @@ public class User {
         this.userProfile = new ArrayList<UserProfile>();
         this.paymentU = new ArrayList<Payment>();
         this.favoritesU = new ArrayList<Favorites>();
+        this.movies = new ArrayList<Movies>();
+        this.tvSeries = new ArrayList<TvSeries>();
+        this.watchedMovies = new ArrayList<Movies>();
+        this.watchedSeries = new ArrayList<TvSeries>();
+        this.rate = new ArrayList<Rating>();
+    }
+
+    public List<Rating> getRate() {
+        return rate;
+    }
+
+    public List<Movies> getMovies() {
+        return movies;
+    }
+
+    public List<Movies> getWatchedMovies() {
+        return watchedMovies;
+    }
+
+    public List<TvSeries> getTvSeries() {
+        return tvSeries;
+    }
+
+    public List<TvSeries> getWatchedSeries() {
+        return watchedSeries;
     }
 
     public String getName() {
@@ -50,6 +80,34 @@ public class User {
         return favoritesU;
     }
 
+    //Asiste a midia
+    public void watch(Movies movie) {
+        this.watchedMovies.add(movie);
+    }
+    public void watch(TvSeries serie) {
+        this.watchedSeries.add(serie);
+    }
+
+    //Avaliação de midia.
+    public void rate(Movies movie, int score){
+        Rating scoreM = new Rating(this, movie, score);
+        movie.addRatingMovie(scoreM);
+        this.addRatingMovie(scoreM);
+    }
+    public void addRatingMovie(Rating scoreM){
+        this.rate.add(scoreM);
+    }
+
+    public void rate(TvSeries serie, int score){
+        Rating scoreS = new Rating(this, serie, score);
+        serie.addRatingSerie(scoreS);
+        this.addRatingSerie(scoreS);
+    }
+
+    public void addRatingSerie(Rating scoreS){
+        this.rate.add(scoreS);
+    }
+
     //criação do favorite
     public void createFavorite(){
 
@@ -64,7 +122,7 @@ public class User {
     public void addUserProfile(UserProfile profileAdd){
         this.userProfile.add(profileAdd);
     }
-    ////////////////
+
 
     //Criação do payment
     public void paymentU(String cardBanner, String cardNumber, String cvv, String name){
@@ -74,7 +132,7 @@ public class User {
     public void addPayment(Payment payment){
         this.paymentU.add(payment);
     }
-    /////////////////////
+
 
 
     //Exibição de dados
@@ -84,4 +142,6 @@ public class User {
                 "pagamento'" + paymentU+'\'' +
                 '}';
     }
+
+
 }

@@ -4,23 +4,27 @@ public class Rating {
     private int score;
     private Movies movie;
     private TvSeries series;
+    private User user;
 
-    public Rating(Integer score, Movies movie) {
+    public Rating(User user, Movies movie, int score) {
+        this.user = user;
         this.score = score;
         this.movie = movie;
 
+
     }
-    public Rating(Integer score, TvSeries series){
+    public Rating(User user, TvSeries series, int score){
         this.score = score;
         this.series = series;
+        this.user = user;
 
     }
 
-    public Integer getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void setScore(Integer score) {
+    public void setScore(int score) {
         this.score = score;
     }
 

@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Movies {
     private String title;
-    private String duration;
+    private int duration;
     private String launch;
 
     private List <Genre> genre;
     private List<Rating> rating;
 
-    public Movies(String title, String duration, String launch) {
+    public Movies(String title, int duration, String launch) {
         this.title = title;
         this.duration = duration;
         this.launch = launch;
@@ -29,11 +29,11 @@ public class Movies {
         this.title = title;
     }
 
-    public String getDuration() {
+    public int getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 
@@ -41,7 +41,7 @@ public class Movies {
         return launch;
     }
 
-    public void addRating(Rating ratingAdd){
+    public void addRatingMovie(Rating ratingAdd){
         this.rating.add(ratingAdd);
     }
     public void addGenre(Genre genreAdd){
