@@ -31,55 +31,6 @@ public class User {
         this.watchedSeries = new ArrayList<TvSeries>();
         this.rate = new ArrayList<Rating>();
     }
-
-    public List<Rating> getRate() {
-        return rate;
-    }
-
-    public List<Movies> getMovies() {
-        return movies;
-    }
-
-    public List<Movies> getWatchedMovies() {
-        return watchedMovies;
-    }
-
-    public List<TvSeries> getTvSeries() {
-        return tvSeries;
-    }
-
-    public List<TvSeries> getWatchedSeries() {
-        return watchedSeries;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public List<Payment> getPaymentU() {
-        return paymentU;
-    }
-
-    public List<UserProfile> getUserProfile() {
-        return userProfile;
-    }
-
-    public List<Favorites> getFavoritesU() {
-        return favoritesU;
-    }
-
     //Asiste a midia
     public void watch(Movies movie) {
         this.watchedMovies.add(movie);
@@ -133,7 +84,53 @@ public class User {
         this.paymentU.add(payment);
     }
 
+    public List<Rating> getRate() {
+        return rate;
+    }
 
+    public List<Movies> getMovies() {
+        return movies;
+    }
+
+    public List<Movies> getWatchedMovies() {
+        return watchedMovies;
+    }
+
+    public List<TvSeries> getTvSeries() {
+        return tvSeries;
+    }
+
+    public List<TvSeries> getWatchedSeries() {
+        return watchedSeries;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<Payment> getPaymentU() {
+        return paymentU;
+    }
+
+    public List<UserProfile> getUserProfile() {
+        return userProfile;
+    }
+
+    public List<Favorites> getFavoritesU() {
+        return favoritesU;
+    }
 
     //Exibição de dados
     @Override
